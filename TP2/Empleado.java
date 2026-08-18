@@ -11,7 +11,7 @@ public class Empleado{
         this.setCuil(p_cuil);
         this.setApellido(p_apellido);
         this.setNombre(p_nombre);
-        this.setImporte(p_importe);
+        this.setSueldoBasico(p_importe);
         this.setAnio(p_anio);
     }
     
@@ -27,7 +27,7 @@ public class Empleado{
         this.nombre = p_nombre;
     }
     
-    private void setImporte(double p_importe){
+    private void setSueldoBasico(double p_importe){
         this.sueldoBasico = p_importe;
     }
     
@@ -47,7 +47,7 @@ public class Empleado{
         return nombre;
     }
     
-    public double getImporte(){
+    public double getSueldoBasico(){
         return sueldoBasico;
     }
     
@@ -67,21 +67,21 @@ public class Empleado{
     
     private double descuento(){
         //Parecido a lo anterior pero aca probe retornar directamente (no me gusto jajaja)
-        return (0.02 * this.getImporte()) + 1500;
+        return (0.02 * this.getSueldoBasico()) + 1500;
     }
     
     private double adicional(){
         if(antiguedad() < 2){
-            return this.getImporte() * 0.02; //al final si me gusto jajaja
-        } else if(antiguedad() >= 2 && antiguedad() < 10){
-            return this.getImporte() * 0.04;
+            return this.getSueldoBasico() * 0.02; //al final si me gusto jajaja
+        } else if(antiguedad() < 10){ //antiguedad() >= 2 &&
+            return this.getSueldoBasico() * 0.04;
         } else{
-            return this.getImporte() * 0.06; //mucho.
+            return this.getSueldoBasico() * 0.06; //mucho.
         }
     }
     
     public double sueldoNeto(){
-        return (this.getImporte() + this.adicional()) - this.descuento();
+        return (this.getSueldoBasico() + this.adicional()) - this.descuento();
     }
     
     public String nomYApe(){
