@@ -2,38 +2,37 @@ import java.util.Scanner;
 
 public class OperarVector {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        
+
+        Scanner sc = new Scanner(System.in);
+
         int[] notas = new int[5];
-        
-        //Cargar el vector
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Ingrese nota: ");
-            notas[i] = teclado.nextInt();
-        }
-        
-        //Sumar las notas para el promedio
+        int mayor= 0;
         int suma = 0;
-        for (int i = 0; i < 5; i++) {
-            suma = suma + notas[i];
-        }
-        double promedio = (double) suma / 5;
-        
-        //Buscar la mayor nota
-        int mayor = notas[0];
-        for (int i = 0; i < 5; i++) {
-            if (notas[i] > mayor) {
-                mayor = notas[i];
+
+        for(int i= 0; i < notas.length; i++){
+            System.out.println("Ingrese la nota " + (i + 1) + ": ");
+            notas[i] = sc.nextInt();
+
+            suma += notas[i]; //acumula las notas
+
+            if(notas[i] > mayor){
+                mayor= notas[i];
             }
         }
-        
-    
-        for (int i = 0; i < 5; i++) {
-            System.out.print(notas[i] + "\t");
+        double promedio = (double) suma / notas.length;
+
+        /*
+        for (int i = 0; i < notas.length; i++) {
+            System.out.println(notas[i]);
         }
-        
-        System.out.println();
-        System.out.println("El promedio es: " + promedio);
-        System.out.println("La mayor nota es: " + mayor);
+        */
+
+        System.out.println("\nNotas ingresadas: ");
+        for(int nota : notas){
+            System.out.print("| " + nota + " |");
+        }
+
+        System.out.println("\n\nPromedio: " + promedio);
+        System.out.println("Mayor nota: " + mayor);
     }
 }
