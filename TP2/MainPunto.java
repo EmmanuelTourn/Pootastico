@@ -1,6 +1,15 @@
 import java.util.Scanner;
+
+/**
+ * Clase ejecutable para probar el funcionamiento de la clase Punto ingresando valores por teclado[cite: 19, 22].
+ * * @author Luque Emmanuel y Gonzalez Exequiel
+ */
 public class MainPunto{
-     public static void main(String[] args) {
+    /**
+     * Método principal de ejecución.
+     * @param args Argumentos de la línea de comandos.
+     */
+    public static void main(String[] args) {
         //instanciamos el Scanner REPASAR PORQUE TARDE 2HS EN ESTO
         Scanner teclado = new Scanner(System.in);
         
