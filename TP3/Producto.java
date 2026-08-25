@@ -93,7 +93,9 @@ public class Producto{
     }
 
     public void mostrar(){
-        System.out.println(" ");
+        System.out.println(this.laboratorio.mostrar());
+        System.out.println("Rubro: " + this.getRubro() + "\nDescripcion: " + this.getDescripcion());
+        System.out.println("Precio Costo: " + this.getCosto() + "\nStock: " + this.getStock() + " - Stock Valorizado: $" + this.stockValorizado());
     }
 
     public void ajuste(int p_cantidad){
@@ -114,7 +116,7 @@ public class Producto{
     }
 
     public String mostrarLinea(){
-        return "--------------------------------------------------";
+        return this.getDescripcion() + "   " + this.precioLista() + "   " + this.precioContado();
     }
 
     public void ajustarPtoRepo(double p_porce){
