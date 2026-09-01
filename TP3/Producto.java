@@ -93,7 +93,9 @@ public class Producto{
     }
 
     public void mostrar(){
-        System.out.println(" ");
+        System.out.println(this.laboratorio.mostrar());
+        System.out.println("Rubro: " + this.getRubro() + "\nDescripcion: " + this.getDescripcion());
+        System.out.printf("Precio Costo: " + this.getCosto() + "\nStock: " + this.getStock() + " - Stock Valorizado: $%.2f"  , this.stockValorizado());
     }
 
     public void ajuste(int p_cantidad){
@@ -102,9 +104,9 @@ public class Producto{
 
     public double stockValorizado(){
         double totalCosto = (this.getStock() * this.getCosto());
-        return totalCosto + (totalCosto * 0.12);
+        return totalCosto * 1.12;
     }
-
+    
     public double precioLista(){
         return this.getCosto() + (this.getCosto() * 0.12); //pones costo mas costo por 0.12 porque si haces solo 100 x 0.12 es 12 pesos Y NO PUE
     }
@@ -114,9 +116,9 @@ public class Producto{
     }
 
     public String mostrarLinea(){
-        return "--------------------------------------------------";
+        return this.getDescripcion() + "   " + this.precioLista() + "   " + this.precioContado();
     }
-
+    
     public void ajustarPtoRepo(double p_porce){
         this.setPorcPtoRepo(p_porce); 
     }

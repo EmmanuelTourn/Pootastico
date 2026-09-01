@@ -139,7 +139,7 @@ public class Laboratorio{
      * @return Cadena formateada con nombre, domicilio y teléfono.
      */
     public String mostrar(){ //El UML nos dice que es de tipo String entonces necesita "retornar" algo, a diferencia del Objeto que era de tipo void
-        return "Laboratorio: " + nombre + "\nDomicilio: " + domicilio + " - Telefono: " + telefono;
+        return "Laboratorio: " + nombre + "\nDomicilio: " + domicilio + " - Telefono: " + telefono + "\n";
     }
     
 }
