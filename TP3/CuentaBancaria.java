@@ -1,32 +1,38 @@
-Clase CuentaBancaria {
+public class CuentaBancaria{
     private int nroCuenta;
     private double saldo;
     private Persona titular;
+
     
-    public CuentaBancaria(int p_nroCuenta, Persona p_titular) {
+    public CuentaBancaria(int p_nroCuenta, Persona p_titular){
         this.setNroCuenta(p_nroCuenta);
         this.setTitular(p_titular);
     }
     
-    public CuentaBancaria(int p_nroCuenta, Persona p_titular, double p_saldo) {
+    public CuentaBancaria(int p_nroCuenta, Persona p_titular, double p_saldo){
         this.setNroCuenta(p_nroCuenta);
         this.setTitular(p_titular);
         this.setSaldo(p_saldo);
     }
     
-    public double depositar(double p_importe) {
-        return this.getSaldo() =+ p_importe;
+    private void setNroCuenta(int p_nroCuenta){
+        this.nroCuenta = p_nroCuenta;
     }
     
-    public double extraer(double p_importe) {
-        return this.getSaldo() =- p_importe;
+    private void setSaldo(double p_saldo){
+        this.saldo = p_saldo;
     }
     
-    public void mostrar() {
-        System.out.println("- Cuenta Bancaria -\n" + "Titular: " + titular.getNomYApe() + " (" + titular.edad() + " años)\n" + "Saldo: " + this.getSaldo());
+    private void setTitular(Persona p_titular){
+        this.titular = p_titular;
     }
     
-    public String toString() {
-        return String.format("\t" + this.getNroCuenta() + " " + titular.getNomYApe() + "\t" + this.getSaldo());
+    public int getNroCuenta(){ return nroCuenta;}
+    public double getSaldo(){ return saldo;}
+    public Persona getTitular(){ return titular;}
+    
+    
+    public double depositar(double p_importe){
+        return 
     }
 }

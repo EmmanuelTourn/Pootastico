@@ -15,9 +15,7 @@ public class Punto{
         this.setX(0.0);
         this.setY(0.0);
     }
-    public Punto(){
-        
-    }
+    
     /**
      * Constructor con coordenadas iniciales.
      * @param p_x Coordenada en el eje X.
