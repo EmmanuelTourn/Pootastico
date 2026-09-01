@@ -1,93 +1,46 @@
-/**
- * Esta clase representa un punto en el plano cartesiano mediante sus coordenadas x e y. 
- * 
- * @author Gonzalez R. Exequiel y Luque Tourn M. Emmanuel
- */
 public class Punto {
-    private double x;
-    private double y;
+    private double x, y;
 
-    public Punto() {}
-    
-    /**
-     * Constructor que permite crear un punto indicando sus coordenadas.
-     * 
-     * @param p_x coordenada x del punto.
-     * @param p_y coordenada y del punto
-     */
-    public Punto(double p_x, double p_y) {
-        setX(p_x);
-        setY(p_y);
+    public Punto(){
+        this.setX(0.0);
+        this.setY(0.0);
     }
 
-    /* getters and setters */
-    /**
-     * Establece la coordenada de x del punto.
-     * @param p_x nueva coordenada x.
-     */
+    public Punto(double p_x, double p_y){
+        this.setX(p_x);
+        this.setY(p_y);
+    }
 
-    public void setX(double p_x) {
+    private void setX(double p_x){
         this.x = p_x;
     }
-    /**
-     * Establece la coordenada y del punto.
-     * @param p_y nueva coordenada y.
-     */
-    public void setY(double p_y) {
+
+    private void setY(double p_y){
         this.y = p_y;
     }
-    
-    /**
-     * Retorna la coordena x del punto.
-     * 
-     * @return coordenada x.
-     */
-    public double getX() {return x;}
-    
-    /**
-     * Retorna la coordena y del punto.
-     * 
-     * @return coordenada y.
-     */
-    public double getY() {return y;}
 
-    /**
-     * Calcula la distancia entre este punto y otro punto recibido.
-     *
-     * @param p_ptoDistante punto con el cual se calcula la distancia.
-     * @return distancia entre ambos puntos con fórmula de Pitágoras.
-     */
-    public double distanciaA(Punto p_ptoDistante) {
-        double dx = p_ptoDistante.getX() - this.getX();
-        double dy = p_ptoDistante.getY() - this.getY();
-
-        return Math.sqrt(Math.pow(dx, 2)  + Math.pow(dy, 2));
+    public double getX(){
+        return this.x;
     }
 
-    /**
-     * Desplaza el punto una determinada cantidad sobre los ejes x e y.
-     *
-     * @param p_dx desplazamiento sobre el eje x.
-     * @param p_dy desplazamiento sobre el eje y.
-     */
-    public void desplazar(double p_dx, double p_dy) {
-        setX(getX() + p_dx);
-        setY(getY() + p_dy);
+    public double getY(){
+        return this.y;
     }
 
-    /**
-     * Muestra por pantalla las coordenadas del punto.
-     */
-    public void mostrar() {
-        System.out.println("X: " + getX() + ", Y: " + getY());
+    public void desplazar(double p_dx, double p_dy){
+        this.setX(this.getX() + p_dx);
+        this.setY(this.getY() + p_dy);
     }
 
-    /**
-     * Retorna las coordenadas del punto en formato (x, y).
-     *
-     * @return cadena de texto con las coordenadas del punto.
-     */
-    public String coordenadas() {
-        return "(" + getX() + ", " + getY() + ")";
+    public void mostrar(){
+        System.out.println("Punto. X: " + this.getX() + ", Y: " + this.getY());
+    }
+
+    public String coordenadas(){
+        return "(" +this.getX()+ ", " +this.getY()+ ")";
+    }
+
+    public double distanciaA(Punto p_ptoDistante){
+        return Math.sqrt(Math.pow((p_ptoDistante.getX() - this.getX()),2) + Math.pow((p_ptoDistante.getY() - this.getY()),2));
     }
 }
